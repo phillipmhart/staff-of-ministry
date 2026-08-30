@@ -1,5 +1,5 @@
-const CACHE = "staff-of-ministry-v10";
-const FILES = ["./", "./index.html", "./style.css", "./app.js", "./rebuild.js", "./success.js", "./polish.js", "./manifest.webmanifest", "./icon.svg"];
+const CACHE = "staff-of-ministry-v12";
+const FILES = ["./", "./index.html", "./style.css", "./app.js", "./rebuild.js", "./success.js", "./polish.js", "./revision.js", "./final.js", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)).then(() => self.skipWaiting())));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", event => {
